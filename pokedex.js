@@ -1,4 +1,9 @@
 let pokemonImage = document.getElementById("picture");
+let pokemonName = document.getElementById("name");
+let height = document.getElementById("height");
+let weight = document.getElementById("weight");
+let moves = document.getElementById("moves");
+let types = document.getElementById("types");
 
 function getPokemonDetails(text) {
   fetch("https://pokeapi.co/api/v2/pokemon/"+text)
@@ -7,12 +12,6 @@ function getPokemonDetails(text) {
     return response.json();
   })
   .then(function(json){
-    let pokemonName = document.getElementById("name");
-    let height = document.getElementById("height");
-    let weight = document.getElementById("weight");
-    let moves = document.getElementById("moves");
-    let types = document.getElementById("types");
-
     pokemonName.innerText = json.name;
     height.innerText = json.height + " decimeters";
     weight.innerText = json.weight + " hectograms";
@@ -26,7 +25,6 @@ function getPokemonDetails(text) {
     populateTypes(json, types);
 
     pokemonImage.src = json.sprites.front_default;
-
   })
 
   function populateMoves(json, moves) {

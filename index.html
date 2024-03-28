@@ -12,19 +12,24 @@
   <div id="content">
     <h1>Choose a starter Pokemon to see their stats!</h1>
 
+    <!-- Buttons to choose pokemon to display -->
     <div class="buttons">
       <button id="charmanderBtn">Charmander</button>
       <button id="squirtleBtn">Squirtle</button>
       <button id="bulbasaurBtn">Bulbasaur</button>
     </div>
    
-    
+    <!-- Display pokemon image and details here -->
     <div class="table">
       <div id="imageColumn" class="column left">
-        <img class="pokemonImage" src="./assets/Poke_Ball.webp" alt="">
+        <img class="pokemonImage" id="picture" src="./assets/Poke_Ball.webp" alt="">
       </div>
+      <!-- Right column contains all details we wish to display -->
       <div class="column right">
-        <h2 id="name"></h2>
+        <div class="stats">
+          <h3>Name: </h3>
+          <p id="name"></p>
+      </div>
         <div class="stats">
             <h3>Height: </h3>
             <p id="height"></p>
@@ -41,12 +46,9 @@
           <h3>Moves: </h3>
           <ul id="moves"></ul>
         </div>
-        
       </div>
     </div>
   </div>
-
-
   
   <script src="./pokedex.js"></script>
 </body>

@@ -1,3 +1,9 @@
+/* General styling */
+body{
+  background-color: red;
+  font-size: larger;
+}
+
 h1{
   text-align: center;
 }
@@ -5,6 +11,7 @@ h1{
 img{
   width:100%;
 }
+
 button{
   height: 50px;
   width: 200px;
@@ -12,7 +19,12 @@ button{
   text-align: center;
   font-weight: bold;
   font-size: x-large;
+  box-shadow: 5px 10px;
 }
+
+
+
+/* Classes */
 .buttons{
   text-align: center;
 }
@@ -22,14 +34,15 @@ button{
 }
 
 .table{
-  border: solid 2px black;
+  border: solid 3px black;
   display: flex;
   width: 100%;
   height: fit-content;
+  background-color: white;
 }
 
 .column{
-  border: solid 1px black;
+  border: solid 3px black;
   width: 65%;
   display: block;
   margin: 10px;
@@ -48,6 +61,8 @@ button{
 .stats p, .stats h3, .stats ul{
   margin: 10px;
 }
+
+/* IDs */
 #name{
   text-transform: capitalize;
 }
@@ -55,12 +70,26 @@ button{
 #imageColumn{
   margin: 10px;
   width: 35%;
+  background-color: white;
 }
 
+/* Style the moves ul and its children */
 #moves{
   column-count: 6;
 }
 
 #moves li, #types li{
   list-style: none;
+}
+
+#charmanderBtn{
+  background-color: orange;
+}
+
+#squirtleBtn{
+  background-color: aqua;
+}
+
+#bulbasaurBtn{
+  background-color: lightgreen;
 }
