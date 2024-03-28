@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pokedex.css">
+  <title>API Challenge</title>
+</head>
+<body>
+
+  <div id="content">
+    <h1>Choose a starter Pokemon to see their stats!</h1>
+
+    <div class="buttons">
+      <button id="charmanderBtn">Charmander</button>
+      <button id="squirtleBtn">Squirtle</button>
+      <button id="bulbasaurBtn">Bulbasaur</button>
+    </div>
+   
+    
+    <div class="table">
+      <div id="imageColumn" class="column left">
+        <img class="pokemonImage" src="./assets/Poke_Ball.webp" alt="">
+      </div>
+      <div class="column right">
+        <h2 id="name"></h2>
+        <div class="stats">
+            <h3>Height: </h3>
+            <p id="height"></p>
+        </div>
+        <div class="stats">
+          <h3>Weight: </h3>
+          <p id="weight"></p>
+        </div>
+        <div class="stats">
+          <h3>Types: </h3>
+            <ul id="types"></ul>
+          </div>
+        <div class="stats">
+          <h3>Moves: </h3>
+          <ul id="moves"></ul>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  
+  <script src="./pokedex.js"></script>
+</body>
+</html>

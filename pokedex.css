@@ -1,0 +1,66 @@
+h1{
+  text-align: center;
+}
+
+img{
+  width:100%;
+}
+button{
+  height: 50px;
+  width: 200px;
+  margin: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+}
+.buttons{
+  text-align: center;
+}
+
+.content{
+  width: 75%;
+}
+
+.table{
+  border: solid 2px black;
+  display: flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.column{
+  border: solid 1px black;
+  width: 65%;
+  display: block;
+  margin: 10px;
+  padding: 10px;
+}
+
+.column h2{
+  text-align: center;
+}
+
+.stats{
+  display: flex;
+  /* visibility: hidden; */
+}
+
+.stats p, .stats h3, .stats ul{
+  margin: 10px;
+}
+#name{
+  text-transform: capitalize;
+}
+
+#imageColumn{
+  margin: 10px;
+  width: 35%;
+}
+
+#moves{
+  column-count: 6;
+}
+
+#moves li, #types li{
+  list-style: none;
+}
