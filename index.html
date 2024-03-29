@@ -8,30 +8,31 @@
   <title>API Challenge</title>
 </head>
 <body>
-
-  <p>Hello World</p>
-
   <div id="content">
-    <h1>Choose a starter Pokemon to see their stats!</h1>
+    <h1>Welcome to Solomon's Pokedex!</h1>
+    <h2>Use the buttons below to look through all known pokemon.</h2>
 
     <!-- Buttons to choose pokemon to display -->
     <div class="buttons">
-      <button id="charmanderBtn">Charmander</button>
-      <button id="squirtleBtn">Squirtle</button>
-      <button id="bulbasaurBtn">Bulbasaur</button>
+      <button id="previousBtn"> Previous </button>
+      <button id="nextBtn"> Next </button>
     </div>
    
     <!-- Display pokemon image and details here -->
     <div class="table">
       <div id="imageColumn" class="column left">
-        <img class="pokemonImage" id="picture" src="./assets/Poke_Ball.webp" alt="">
+        <img class="pokemonImage" id="picture" src="./assets/Poke_Ball.webp" alt="iamge of pokemon as seen in the game">
       </div>
       <!-- Right column contains all details we wish to display -->
       <div class="column right">
         <div class="stats">
+          <h3>Index: </h3>
+          <p id="index"></p>
+        </div>
+        <div class="stats">
           <h3>Name: </h3>
           <p id="name"></p>
-      </div>
+        </div>
         <div class="stats">
             <h3>Height: </h3>
             <p id="height"></p>

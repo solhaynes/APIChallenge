@@ -1,17 +1,21 @@
 let pokemonImage = document.getElementById("picture");
+let pokemonIndex = document.getElementById("index");
 let pokemonName = document.getElementById("name");
 let height = document.getElementById("height");
 let weight = document.getElementById("weight");
 let moves = document.getElementById("moves");
 let types = document.getElementById("types");
 
+let currentIndex = 0;
+let currentPokemonName;
+
 function getPokemonDetails(text) {
   fetch("https://pokeapi.co/api/v2/pokemon/"+text)
   .then(function(response){
-    console.log(response);
     return response.json();
   })
   .then(function(json){
+    pokemonIndex.innerText = json.id;
     pokemonName.innerText = json.name;
     height.innerText = json.height + " decimeters";
     weight.innerText = json.weight + " hectograms";
@@ -23,12 +27,11 @@ function getPokemonDetails(text) {
     //populate child nodes
     populateMoves(json, moves);
     populateTypes(json, types);
-
+    
     pokemonImage.src = json.sprites.front_default;
   })
 
   function populateMoves(json, moves) {
-    console.log(json);
     for (let i = 0; i < json.moves.length; i++) {
       let listItem = document.createElement('li');
       listItem.innerText = json.moves[i].move.name;
@@ -37,7 +40,6 @@ function getPokemonDetails(text) {
   }
 
   function populateTypes(json, types) {
-    console.log(json);
     for (let i = 0; i < json.types.length; i++) {
       let listItem = document.createElement('li');
       listItem.innerText = json.types[i].type.name;
@@ -53,12 +55,33 @@ function getPokemonDetails(text) {
     }
   }
 }
-let charButton = document.querySelector("#charmanderBtn");
-let squirButton = document.querySelector("#squirtleBtn");
-let bulButton = document.querySelector("#bulbasaurBtn");
 
+function nextPokemon(){
+  currentIndex = currentIndex+1;
+  getPokemonName(currentIndex);
+}
+function previousPokemon(){
+  if (currentIndex > 0){
+    currentIndex = currentIndex - 1;
+  }
+  getPokemonName(currentIndex);
+}
 
-charButton.addEventListener("click", function(){getPokemonDetails("charmander")});
-squirButton.addEventListener("click", function(){getPokemonDetails("squirtle")});
-bulButton.addEventListener("click", function(){getPokemonDetails("bulbasaur")});
+function getPokemonName(index){
+  fetch("https://pokeapi.co/api/v2/pokemon/"+index)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(json){
+    currentPokemonName = json.name;
+    getPokemonDetails(currentPokemonName);
+  })
+}
+
+// Call nextPokemon() to automatically open to first indexed pokemon
+
+// Event listeners for Buttons
+previousBtn.addEventListener("click", function(){previousPokemon()});
+nextBtn.addEventListener("click", function(){nextPokemon()});
+
 
