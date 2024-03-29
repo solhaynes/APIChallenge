@@ -27,7 +27,7 @@ function getPokemonDetails(text) {
     //populate child nodes
     populateMoves(json, moves);
     populateTypes(json, types);
-    
+
     pokemonImage.src = json.sprites.front_default;
   })
 
@@ -77,8 +77,6 @@ function getPokemonName(index){
     getPokemonDetails(currentPokemonName);
   })
 }
-
-// Call nextPokemon() to automatically open to first indexed pokemon
 
 // Event listeners for Buttons
 previousBtn.addEventListener("click", function(){previousPokemon()});
